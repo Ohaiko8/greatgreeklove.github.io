@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/fonts.css" rel="stylesheet">
+    <link href="../css/product.css" type="text/css" rel="stylesheet">
+    <link href="../css/sidebar.css" type="text/css" rel="stylesheet">
+    <link href="../css/footer.css" type="text/css" rel="stylesheet">
+    <title>Plaggona 2</title>
+</head>
+<body>
+    <nav>
+        <div class="links">
+            <ul>
+            <li>
+                <a href="index.html">
+                    <img src="../files/imgs/home.png" alt="">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="index.html">
+                    <img src="../files/imgs/about.png" alt="">
+                    <span>About Me</span>
+                </a>
+            </li>
+            <li>
+                <a href="gallery.html">
+                    <img src="../files/imgs/gallery.png" alt="">
+                    <span>Gallery</span>
+                </a>
+            </li>
+            <li>
+                <a href="contact.html">
+                    <img src="../files/imgs/contact.png" alt="">
+                    <span>Mail</span>
+                </a>
+            </li>
+        </ul>
+        </div>
+        <div class="sidebar" id="sidebar"></div>
+    </nav>
+    <main class="product">
+    <div class="info">
+        <nav></nav>
+        <a href="gallery.html" class="back">Back</a>
+            <h1 id="h1">Plaggona W2</h1>
+                    <h2>Materials:</h2>
+                        <li>
+                            <img src="../files/imgs/cotton.png">100% Cotton
+                        </li>
+                <div class="colors">
+                    <h2>Color:</h2>
+                    <button id = "color1" onclick="changeImage1()"></button>
+                    <button id = "color2" onclick="changeImage2()"></button>
+                    <button id = "color3" onclick="changeImage3()"></button>
+                </div>
+                <div class="buy">
+                    <h2>99.99€</h2>
+                    <a href="contact.html">Contact Me</a>
+                </div>
+                <div class="story">
+                    <h2>Story</h2>
+                    <p>She is beautiful, elegant and has magical powers...!!! She can bewitch all of us! From a religious figurine, became a clay doll, then a "neurospastic" with moving limbs and today, she is made out of fabric with wonderful designs engraved on linoleum. Great Greek Love is creating a series of four different figures of this wonderful doll, printed with special silkscreen colours on 100% organic cotton. She can be your's or your child's favorite companion, transfering you from ancient civilization to today!</p>
+                </div>
+    </div>
+
+    <div class="toy">
+        <img src="../files/imgs/toy7.png" id="toy">
+    </div>
+    </main>
+    <footer>
+        <div class="container-footer">
+            <div class="column1-footer">
+                <h3>GREAT GREEK LOVE</h3>
+            </div>
+            <div class="column2-footer">
+                <h4>NAVIGATION</h4>
+                <dd><a href="index.html">Home</a></dd>
+                <dd><a href="index.html">About</a></dd>
+                <dd><a href="gallery.html">Gallery</a></dd>
+                <dd><a href="contact.html">Contact</a></dd>
+            </div>
+            <div class="column3-footer">
+                <h4>CONTACT ME</h4>
+                <dd>Eindhoven, Netherlands</dd>
+                <dd><a href="#">info@gmail.com</a></dd>
+                <dd>The best way to reach me is through the contact form, or via email.</dd>
+            </div>
+            <div class="column4-footer">
+                <h4>SOCIAL MEDIA</h4>
+                <dd>
+                    <a href="https://instagram.com/greatgreeklove/" target="_blank" rel="noopener noreferrer">
+                        <img src="../files/imgs/instagram.png" alt="" class="contact-logo">
+                        <h1></h1>
+                    </a>
+                </dd>
+                <dd>
+                    <a href="#" target="_blank" rel="noopener noreferrer">
+                        <img src="../files/imgs/Facebook-logo.png">
+                    </a>
+                </dd>
+                <dd>
+                    <a href="#" target="_blank" rel="noopener noreferrer">
+                        <img src="../files/imgs/etsy.png">
+                    </a>
+                </dd>
+            </div>
+        </div>
+        <div class="privacy-policy">
+            <p><a href="">Privacy Policy</a> - <a href="">Cookie Policy</a></p>
+            <p>Copyright © 2022 by Lorem Ipsum. All rights reserved worldwide.</p>
+        </div>
+    </footer>
+    <script>
+        function changeImage1() {
+            var image = document.getElementById("toy");
+                if (image.src == "../files/imgs/toy8.png") {
+                    image.src = "../files/imgs/toy8.png";
+                }
+                else {
+                    image.src = "../files/imgs/toy7.png";
+                    document.getElementById('h1').innerHTML = 'Plaggona W2';
+                }
+        }
+        function changeImage2() {
+            var image = document.getElementById("toy");
+                if (image.src == "../files/imgs/toy7.png") {
+                    image.src = "../files/imgs/toy7.png";
+                }
+                else {
+                    image.src = "../files/imgs/toy8.png";
+                    document.getElementById('h1').innerHTML = 'Plaggona G2';
+                }
+        }
+        function changeImage3() {
+            var image = document.getElementById("toy");
+                if (image.src == "../files/imgs/toy9.png") {
+                    image.src = "../files/imgs/toy9.png";
+                }
+                else {
+                    image.src = "../files/imgs/toy9.png";
+                    document.getElementById('h1').innerHTML = 'Plaggona Y2';
+                }
+        }
+    </script>
+</body>
+</html>

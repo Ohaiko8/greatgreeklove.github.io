@@ -1,0 +1,166 @@
+* {
+    margin:0;
+    padding:0;
+    scroll-behavior: smooth;
+    font-family: 'Playfair Display';
+}
+
+body {
+    overflow: hidden;
+}
+
+#preloader{
+    background: #f1f2f3 url(../files/animations/loader.gif) no-repeat center center;
+    background-size: 10%;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    transition: opacity 0.5s, visibility 0.5s;
+    transition: 0.4s;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+.preloader_hidden{
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.flex{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+.menu{
+    position: relative;
+    width: 20%; 
+    height: 100vh;
+    background-color: #F4E1D0;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu a {
+    margin: 30px 30px 30px 30px;
+    width: 30%;
+    font-weight: 500;
+    font-size: 15pt;
+    color: #2D4450;
+    transition: 0.4s;
+}
+
+.menu a:hover {
+    color:#e9b164;
+    transition: 0.4s;
+}
+
+
+.menu .elements_cont{
+    position: relative;
+    width: 80%;
+    height: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu .elements_cont .scenes{
+    position: relative;
+    width: 100%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu .elements_cont .scenes div{
+    position: relative;
+    width: 80%;
+    height: 30%;
+    cursor: pointer;
+}
+
+.menu .elements_cont .scenes div img{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.menu .elements_cont .toys{
+    position: relative;
+    width: 100%;
+    height: 25%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 30px;
+}
+
+.line1 .tv1{
+    margin-bottom: 10px;
+}
+
+.line2 .tv3{
+    margin-bottom: 10px;
+}
+
+
+.menu .elements_cont .toys div{
+    position: relative;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+}
+
+.menu .elements_cont .toys div img{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.menu .elements_cont .colors{
+    position: relative;
+    height: 15%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.menu .elements_cont .colors div{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 10em;
+    cursor: pointer;
+}
+
+.menu .elements_cont .colors .cv1{
+    background-color: #AFA46E;
+}
+
+.menu .elements_cont .colors .cv2{
+    background-color: #fff;
+}
+
+.menu .elements_cont .colors .cv3{
+    background-color: #e9b164;
+}
+
+.container {
+    position: relative;
+    width: 80%; 
+    height: 100vh;
+}
+
+.chosen{
+    border: 1px solid #2d4450;
+}

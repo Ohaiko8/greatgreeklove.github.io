@@ -1,0 +1,137 @@
+*{
+    scroll-behavior: smooth;
+    font-family: 'Playfair Display';
+}
+
+.product_page {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+.product {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    height: 100%;
+    align-content: center;
+    row-gap: 2vh;
+}
+
+a.back {
+    font-family:"Playfair Display" ;
+    font-weight: 500;
+    font-size: 15pt;
+    color: #2D4450;
+    transition: 0.4s;
+}
+
+a.back:hover {
+    color:#e9b164;
+}
+
+.info {
+    padding: 10vh;
+    padding-left: 20vh;
+    color: #2D4450;
+    background-color: #F4E1D0;
+    width: 100%;
+}
+
+.buy {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2vh;
+}
+
+.buy a{
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    background-color: #2D4450;
+    color: #fff;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: .3s;
+    font-weight: 600;
+    border-radius: 10px;
+}
+
+.buy a:hover{
+    background-color: rgba(45, 68, 80, 0.9);
+}
+
+.buy a:focus{
+    background-color: rgba(45, 68, 80, 0.9);
+}
+
+.info h1 {
+    width: 40%;
+    position: relative;
+    bottom: 0;
+    border-bottom: 2px solid #FD8554;
+    font-family: 'Playfair Display';
+    font-weight: bold;
+    font-size: 30pt;
+}
+
+.product h2 {
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+.toy {
+    display: flex;
+    align-items: center;
+}
+
+.toy img {
+    max-width: 100%;
+    height: auto;
+}
+
+.info li {
+    list-style: none;
+    display: inline-flex;
+    align-items: center;
+}
+
+li img {
+    scale: 0.7;
+}
+
+.colors {
+    display: flex;
+    align-items: center;
+    gap: 2vh;
+}
+
+#color1 {
+    background-color: #FFFF;
+    border-radius: 100%;
+    width: 4vh;
+    height: 4vh;
+}
+
+#color2 {
+    background-color: #AFA46E;
+    border-radius: 100%;
+    width: 4vh;
+    height: 4vh;
+}
+
+#color3 {
+    background-color: #e9b164;
+    border-radius: 100%;
+    width: 4vh;
+    height: 4vh;
+}
+
+#color1:hover, #color2:hover, #color3:hover {
+    cursor: pointer;
+    scale:1.1;
+}

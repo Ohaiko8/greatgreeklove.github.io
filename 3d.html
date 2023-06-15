@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>3D Toys</title>
+	<link href="../css/3d.css" rel="stylesheet">
+    <link href="../css/fonts.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+    <div id="preloader" class="preloader"></div>
+    <div class="flex">
+        <div class="menu">
+            <a href="plaggona3.html">Back</a>
+            <div class="elements_cont">
+                <div class="scenes">
+                    <div class="sv1 chosen" id="sv1">
+                        <img class="" src="../files/imgs/scene1.jpg" alt="V1">
+                    </div>
+                    <div class="sv2" id="sv2">
+                        <img class="" src="../files/imgs/scene2.jpg" alt="V2">
+                    </div>
+                    <div class="sv3" id="sv3">
+                        <img class="" src="../files/imgs/scene3.jpg" alt="V3">
+                    </div>
+                </div>
+                <div class="toys">
+                    <div class="line1">
+                        <div class="tv1 chosen" id="tv1">
+                            <img class="" src="../files/imgs/shape1.png" alt="V1">
+                        </div>
+                        <div class="tv2" id="tv2">
+                            <img class="" src="../files/imgs/shape2.png" alt="V2">
+                        </div>
+                    </div>
+                    <div class="line2">
+                        <div class="tv3" id="tv3">
+                            <img class="" src="../files/imgs/shape3.png" alt="V3">
+                        </div>
+                        <div class="tv4" id="tv4">
+                            <img class="" src="../files/imgs/shape4.png" alt="V3">
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                <div class="colors">
+                    <div class="cv1 chosen" id="cv1"></div>
+                    <div class="cv2" id="cv2"></div>
+                    <div class="cv3" id="cv3"></div>
+                </div>
+            </div>
+        </div>
+        <div class="container"></div>
+    </div>
+    
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.139.0/build/three.module.js",
+                "OrbitControls": "https://unpkg.com/three@0.139.0/examples/jsm/controls/OrbitControls.js",
+                "GLTFLoader": "https://unpkg.com/three@0.139.0/examples/jsm/loaders/GLTFLoader.js",
+                "RectAreaLightHelper": "https://unpkg.com/three@0.139.0/examples/jsm/helpers/RectAreaLightHelper.js",
+                "RectAreaLightUniformsLib": "https://unpkg.com/three@0.139.0/examples/jsm/lights/RectAreaLightUniformsLib.js"
+            }
+        }
+    </script>
+
+    <script type="module">
+
+        import * as THREE from 'three';
+        import { OrbitControls } from 'OrbitControls';
+        import { GLTFLoader } from 'GLTFLoader';
+        import { RectAreaLightHelper } from 'RectAreaLightHelper'
+        import { RectAreaLightUniformsLib } from 'RectAreaLightUniformsLib';
+
+        let sceneSel = '../files/imgs/scene1.jpg';
+        let toySel = '1';
+        let colorSel = 'green';
+        let finalToy = '../files/models/' + toySel + '_' + colorSel + '.glb';
+
+        function init(sceneSel, finalToy) {
+            let container = document.querySelector('.container');
+
+            //Scene
+            const scene = new THREE.Scene()
+            
+            //Load background texture
+            const loader = new THREE.TextureLoader();
+            loader.load(sceneSel , function(texture)
+            {
+                scene.background = texture;  
+            });
+
+            //Camera
+            const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 3000);
+            camera.position.set(2, 0, 1)
+
+            //render
+            const renderer = new THREE.WebGLRenderer({antialias: true})
+            renderer.setSize(window.innerWidth, window.innerHeight)
+            container.appendChild(renderer.domElement)
+
+            // Model
+            {
+                const loader = new GLTFLoader();
+                loader.load(finalToy, gltf => {
+                scene.scale.set(0.3, 0.3, 0.3);
+                scene.add(gltf.scene);
+                }, 
+                    function (error) {
+                        console.log('Error: ' + error)
+                    }
+                )
+            }
+            
+            {
+                const light = new THREE.DirectionalLight(0xffffff, 1)
+                light.position.set(0, 0, 10)
+                light.lookAt(0, 0, 0)
+                scene.add(light)
+
+                // Helper
+                // const helper = new THREE.DirectionalLightHelper(light, 5)
+                // scene.add(helper)
+            }
+
+            {
+                const light = new THREE.DirectionalLight(0xffffff, 1)
+                light.position.set(2, 0, 5)
+                light.lookAt(0, 1, 0)
+                scene.add(light)
+
+                // Helper
+                // const helper = new THREE.DirectionalLightHelper(light, 5)
+                // scene.add(helper)
+            }
+
+            RectAreaLightUniformsLib.init();
+            {
+                const rectLight = new THREE.RectAreaLight(0xffffff, 1, 100, 100);
+                rectLight.position.set(-10,0,0)
+                rectLight.rotation.y = Math.PI + Math.PI/4;
+                scene.add(rectLight)
+            }
+
+            {
+                const rectLight = new THREE.RectAreaLight(0xffffff, 1, 100, 100);
+                rectLight.position.set(10,0,0)
+                rectLight.rotation.y = Math.PI - Math.PI/4;
+                scene.add(rectLight)
+            }
+            
+            //OrbitControls
+            const controls = new OrbitControls(camera, renderer.domElement);
+            controls.autoRotate = true;
+            controls.autoRotateSpeed = 2;
+            controls.enableDamping = true;
+
+            //Resize
+            window.addEventListener('resize', onWindowResize, false)
+            
+            function onWindowResize() {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+
+                renderer.setSize(window.innerWidth, window.innerHeight)
+            }
+
+            // Animate
+            function animate() {
+                requestAnimationFrame(animate)
+                controls.update();
+                renderer.render(scene, camera)
+            }
+            animate()
+
+        }
+        init(sceneSel, finalToy);
+
+
+        
+        const scene1 = document.getElementById("sv1");
+        const scene2 = document.getElementById("sv2");
+        const scene3 = document.getElementById("sv3");
+        
+        scene1.addEventListener('click', function(e)
+        {
+            document.querySelector('.container').innerHTML = "";
+            unselectScenes();
+            scene1.classList.add("chosen");
+
+            sceneSel = '../files/imgs/scene1.jpg';
+            init(sceneSel, finalToy);
+        })     
+
+        scene2.addEventListener('click', function(e)
+        {
+            document.querySelector('.container').innerHTML = "";
+            unselectScenes();
+            scene2.classList.add("chosen");
+            
+            sceneSel = '../files/imgs/scene2.jpg';
+            init(sceneSel, finalToy);
+        })    
+
+        scene3.addEventListener('click', function(e)
+        {
+            document.querySelector('.container').innerHTML = "";
+            unselectScenes();
+            scene3.classList.add("chosen");
+            
+            sceneSel = '../files/imgs/scene3.jpg';
+            init(sceneSel, finalToy);
+        })  
+        
+        const toy1 = document.getElementById("tv1");
+        const toy2 = document.getElementById("tv2");
+        const toy3 = document.getElementById("tv3");
+        const toy4 = document.getElementById("tv4");
+
+        toy1.addEventListener('click', function(e)
+        {
+            document.querySelector('.container').innerHTML = "";
+            unselectToys();
+            toy1.classList.add("chosen");
+
+            toySel = '1';
+            finalToy = '../files/models/' + toySel + '_' + colorSel + '.glb';
+            init(sceneSel, finalToy);
+        })   
+
+        toy2.addEventListener('click', function(e)
+        {
+            document.querySelector('.container').innerHTML = "";
+            unselectToys();
+            toy2.classList.add("chosen");
+
+            toySel = '2';
+            finalToy = '../files/models/' + toySel + '_' + colorSel + '.glb';
+            init(sceneSel, finalToy);
+        })  
+
+        toy3.addEventListener('click', function(e)
+        {
+            document.querySelector('.container').innerHTML = "";
+            unselectToys();
+            toy3.classList.add("chosen");
+
+            toySel = '3';
+            finalToy = '../files/models/' + toySel + '_' + colorSel + '.glb';
+            init(sceneSel, finalToy);
+        })  
+
+        toy4.addEventListener('click', function(e)
+        {
+            document.querySelector('.container').innerHTML = "";
+            unselectToys();
+            toy4.classList.add("chosen");
+
+            toySel = '4';
+            finalToy = '../files/models/' + toySel + '_' + colorSel + '.glb';
+            init(sceneSel, finalToy);
+        })  
+
+        const color1 = document.getElementById("cv1");
+        const color2 = document.getElementById("cv2");
+        const color3 = document.getElementById("cv3");
+
+        color1.addEventListener('click', function(e)
+        {
+            document.querySelector('.container').innerHTML = "";
+            unselectColors();
+            color1.classList.add("chosen");
+
+            colorSel = 'green';
+            finalToy = '../files/models/' + toySel + '_' + colorSel + '.glb';
+            init(sceneSel, finalToy);
+        })   
+
+        color2.addEventListener('click', function(e)
+        {
+            document.querySelector('.container').innerHTML = "";
+            unselectColors();
+            color2.classList.add("chosen");
+
+            colorSel = 'white';
+            finalToy = '../files/models/' + toySel + '_' + colorSel + '.glb';
+            init(sceneSel, finalToy);
+        })  
+
+        color3.addEventListener('click', function(e)
+        {
+            document.querySelector('.container').innerHTML = "";
+            unselectColors();
+            color3.classList.add("chosen");
+
+            colorSel = 'orange';
+            finalToy = '../files/models/' + toySel + '_' + colorSel + '.glb';
+            init(sceneSel, finalToy);
+        })  
+
+        function unselectScenes(){
+            scene1.classList.remove("chosen");
+            scene2.classList.remove("chosen");
+            scene3.classList.remove("chosen");
+        }
+
+        function unselectToys(){
+            toy1.classList.remove("chosen");
+            toy2.classList.remove("chosen");
+            toy3.classList.remove("chosen");
+            toy4.classList.remove("chosen");
+        }
+
+        function unselectColors(){
+            color1.classList.remove("chosen");
+            color2.classList.remove("chosen");
+            color3.classList.remove("chosen");
+        }
+    </script>
+    
+    <script>
+        window.onload = function(){
+                let loader = document.getElementById("preloader");
+                loader.classList.add("preloader_hidden");
+        };
+    </script>
+</body>
+</html>

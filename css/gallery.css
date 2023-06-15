@@ -1,0 +1,169 @@
+:root{
+    --primary-color: #F4E1D0;
+    --secondary-color: #2D4450;
+    --highlight-color: #FD8554;
+    --primary-font-color: #FFFFFF;
+}
+
+*{
+    list-style: none;
+}
+
+body{
+    background-color: var(--primary-color);
+    margin: 0;
+}
+/*--------------------- Navigation --------------------*/
+
+/*--------------------- Gallery --------------------*/
+.gallery{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 5vh;
+    margin-left: 2vw;
+    margin-right: 2vw;
+}
+
+.gallery img, div{
+    width: 29vw;
+    height: 40vh;
+    min-width: 29vw;
+    min-height: 40vh;
+    object-fit: cover;
+    border-radius: 4px;
+    margin: 2vh;
+    transition: .3s;
+}
+.gallery div{
+    margin-left: 2vw;
+    margin-top: -40vh;
+}
+.gallery div p{
+    width: 27vw;
+    display: none;
+}
+
+.gallery div h1{
+    display: none;
+}
+.gallery img:hover{
+    filter: brightness(0.5);
+}
+
+/*======================on hover display block didn't work is tried all selectores==================*/
+/* .gallery img:hover ~ .gallery div p,.gallery img:hover ~ .gallery div h1{
+    display: block;
+} */
+
+
+.gallery .column1 ul,.gallery .column2 ul ,.gallery .column3 ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+}
+
+.gallery .column1 ul li,.gallery .column2 ul li,.gallery .column3 ul li{
+    margin: 0;
+    padding: 0;
+}
+
+/*===========COLOUMN 1==========*/
+.gallery .column1{
+    position: relative;
+    animation-name: float1;
+    animation-duration: 18s;
+    animation-iteration-count: infinite;
+}
+/*--------maleWhite-------*/
+/*--------maleGreen-------*/
+.gallery img#maleGreen{
+    height: 60vh;
+    min-height: 60vh;
+}
+
+/* div#maleGreenText{
+    margin-top: -60vh;
+} */
+/*--------maleOrange-------*/
+.gallery img#maleOrange{
+    height: 50vh;
+    min-height: 50vh;
+}
+
+/* div#maleOrangeText{
+} */
+
+/*--------femaleWhite-------*/
+
+
+/*===========COLOUMN 2==========*/
+.gallery .column2{
+    position: relative;
+    animation-name: float2;
+    animation-duration: 14s;
+    animation-iteration-count: infinite;
+}
+/*--------sadOrange-------*/
+.gallery img#sadOrange{
+    height: 50vh;
+    min-height: 50vh;
+}
+
+/*--------sadGreen-------*/
+
+/*--------sadWhite-------*/
+.gallery img#sadWhite{
+    height: 60vh;
+    min-height: 60vh;
+}
+
+/*--------femaleOrange-------*/
+
+
+/*===========COLOUMN 3==========*/
+.gallery .column3{
+    position: relative;
+    animation-name: float3;
+    animation-duration: 16s;
+    animation-iteration-count: infinite;
+}
+/*--------roundGreen-------*/
+
+
+/*--------roundWhite-------*/
+
+
+
+/*--------roundOrange-------*/
+.gallery img#roundOrange{
+    height: 60vh;
+    min-height: 60vh;
+}
+
+
+/*--------femaleGreen-------*/
+.gallery img#femaleGreen{
+    height: 50vh;
+    min-height: 50vh;
+}
+
+
+
+@keyframes float1 {
+    0%{margin-top: -8vh;}
+    50%{margin-top: 8vh;}
+    100%{margin-top: -8vh;}
+}
+@keyframes float2 {
+    0%{margin-top: -6vh;}
+    50%{margin-top: 8vh;}
+    100%{margin-top: -6vh;}
+}
+@keyframes float3 {
+    0%{margin-top: -4vh;}
+    50%{margin-top: 8vh;}
+    100%{margin-top: -4vh;}
+}

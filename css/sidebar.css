@@ -1,0 +1,90 @@
+.sidebar {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    margin: 0;
+    padding: 0;
+    height: 50vh;
+    width: 5%;
+    min-width: 60px;
+    min-height: 400px;
+    background: #2D4450;
+    transition: 0.4s;
+    border-radius: 0 10px 10px 0;
+    pointer-events: none;
+    z-index: 998;
+}
+
+.links{
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    margin: 0;
+    padding: 0;
+    height: 50vh;
+    width: 15%;
+    min-width: 80px;
+    min-height: 400px;
+    transition: 0.4s;
+    border-radius: 0 10px 10px 0;
+    z-index: 999;
+}
+
+.links ul {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    list-style: none;
+    width: calc(100% / 3);
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.links ul li {
+    position: relative;
+}
+
+.links ul li a {
+    position: relative;
+    width: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: flex-start;
+    text-decoration: none;
+    transition: 0.4s;
+}
+
+.links ul li a span {
+    color: white;
+    font-size: 24px;
+    padding-left: 20px;
+    top: 50%;
+    transform: translateY(50%);
+    display: none;
+    white-space: nowrap;
+}
+
+.links img {
+    width: 48px;
+    height: 48px;
+}
+
+.links ul li a:hover{
+    transform: translateX(5px);
+    transition: 0.4s;
+}
+
+.links:hover ~ #sidebar{
+    transition: 0.4s;
+    width: 15%;
+}
+
+
+.links:hover span {
+    display: block;
+}

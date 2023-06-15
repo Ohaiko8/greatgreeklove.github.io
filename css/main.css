@@ -1,0 +1,491 @@
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    font-family: 'Playfair Display';
+}
+
+body {
+    width: 100%; 
+    background-color: white;
+    position: absolute;
+    overflow-x: hidden;
+}
+
+/*home page*/
+#home {
+    position: relative;
+    width: 100%; 
+    height: 100vh;
+}
+
+/*preloader*/
+#preloader{
+    background: #f1f2f3 url(../files/animations/loader.gif) no-repeat center center;
+    background-size: 10%;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    transition: opacity 0.5s, visibility 0.5s;
+    transition: 0.4s;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+.preloader_hidden{
+    opacity: 0;
+    transition: 0.4s;
+}
+
+/*intro text*/
+#ggl-intro{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    height: 70vh;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px 0 0 10px;
+    text-align: center;
+    top: 50vh;
+    transform: translateY(-50%);
+    right: 0;
+    padding: 20px;
+}
+
+#ggl-intro h1{
+    text-transform: uppercase;
+    font-size: 48px;
+    color: #2D4450;
+}
+
+
+#ggl-intro h2{
+    padding-top: 20px;
+    font-size: 24px;
+    color: #2D4450;
+}
+
+/*arrow down*/
+#arrow{
+    position: absolute;
+    width: 72px;
+    height: 72px;
+    left: 50%;
+    top: 85vh;
+    transform: translateX(-50%);
+}
+
+#arrow img{
+    transition: 0.4s;
+    width: 72px;
+    height: 72px;
+}
+
+#arrow img:hover{
+    transition: 0.4s;
+    transform: translateY(15px);
+}
+
+/*about page*/
+#about{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.container-about {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0 10%;
+}
+
+.container-about .about-text{
+    position: relative;
+    width: 50%;
+    height: 100%;
+}
+
+.about-text h1{
+    position: relative;
+    font-size: 64px;
+    font-weight: 600;
+    text-align: left;
+    display: inline-block;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+    color: #2D4450; 
+}
+
+.about-text h1:before {
+    content: "";
+    position: absolute;
+    width: 70%;
+    height: 2px;
+    bottom: 0;
+    border-bottom: 2px solid #FD8554;
+}
+
+.about-text p{
+    font-size: 26px;
+    font-weight: 500;
+    text-align: left;
+    display: inline-block;
+    padding-top: 30px;
+    color: #2D4450;
+}
+
+.about-photo{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    left: 50%;
+}
+
+.photo-cont{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    left: 15%;
+}
+
+.ach_1 {
+    transform: translate(0, 0);
+    background-image: url(../files/imgs/fenia.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    z-index: 3;
+}
+
+.ach_2{
+    transform: translate(40px, 40px);
+    z-index: 2;
+    background-color: #FD8554;
+    transition: 0.4s;
+}
+
+.ach{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    justify-items: center;
+    align-content: space-around;
+    align-items: center;
+    padding: 50px;
+    width: 500px;
+    height: 500px;
+}
+
+.ach img{
+    position: relative;
+    width: 30%;
+}
+
+/*toys i make page*/
+#toysimake{
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 100px 0;
+    overflow-x: hidden;
+}
+
+#toysimake .toysimake_title{
+    position: relative;
+    font-size: 64px;
+    font-weight: 600;
+    text-align: center;
+    display: inline-block;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#toysimake .toysimake_title:before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    border-bottom: 2px solid #FD8554;
+}
+
+#toysimake .toysimake_container{
+    overflow-x: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    align-items: center;
+    margin: 70px 0;
+    height: 552px;
+    animation: slide 20s linear infinite alternate;
+    
+    &:hover {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes slide {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -2000px;
+  }
+}
+
+#toysimake .toysimake_container .toysimake_toy{
+    position: relative;
+    margin: 0 70px;
+    height: 512px;
+    width: 512px;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+#toysimake .toysimake_container .toysimake_toy:hover{
+    transform: translateY(-20px);
+    transition: 0.4s;
+}
+
+#toysimake .toysimake_container .toysimake_toy:hover .toysimake_info{
+    background-color: rgba(0, 0, 0, 0.3);
+    transition: 0.4s;
+}
+
+#toysimake .toysimake_container .toysimake_toy .toysimake_info:hover .toysimake_info_text h1{
+    opacity: 1;
+    transition: 0.4s;
+}
+
+#toysimake .toysimake_container .toysimake_toy .toysimake_info:hover .toysimake_info_text h2{
+    opacity: 1;
+    transition: 0.4s;
+}
+
+#toysimake .toysimake_container .toysimake_toy img{
+    position: relative;
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+}
+
+#toysimake .toysimake_container .toysimake_toy .toysimake_info{
+    position: absolute;
+    z-index: 1000;
+    transition: 0.4s;
+    background-color: rgba(0, 0, 0, 0);
+    width: 500px;
+    height: 500px;
+    transition: 0.4s;
+}
+
+#toysimake .toysimake_container .toysimake_toy .toysimake_info .toysimake_info_text{
+    position: relative;
+    width: 400px;
+    height: 400px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+    transition: 0.4s;
+}
+
+#toysimake .toysimake_container .toysimake_toy .toysimake_info .toysimake_info_text h1{
+    opacity: 0;
+    font-weight: 500;
+    font-size: 48px;
+}
+
+#toysimake .toysimake_container .toysimake_toy .toysimake_info .toysimake_info_text h2{
+    opacity: 0;
+    font-weight: 400;
+    font-size: 40px;
+}
+
+.showmorebtn{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.showmorebtn a{
+    text-decoration: none;
+    padding: 1rem 1rem;
+    background-color: #2D4450;
+    color: #fff;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: .3s;
+    font-weight: 600;
+    border-radius: 10px;
+}
+
+.showmorebtn a:hover{
+    background-color: rgba(45, 68, 80, 0.9);
+}
+
+.showmorebtn a:focus{
+    background-color: rgba(45, 68, 80, 0.9);
+}
+
+/*contact form*/
+#contactform{
+    width: 100%;
+    height: 70vh;
+    position: relative;
+    background-color: #F4E1D0;
+    color: #2D4450;
+}
+
+#contactform .container{
+    position: relative;
+    width: 100%;
+    height: 100%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#contactform .contact-box{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+
+#contactform .top_contact{
+    height: 100%;
+}
+
+.top_contact h1{
+    position: relative;
+    font-size: 64px;
+    font-weight: 600;
+    text-align: left;
+    display: inline-block;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.top_contact h1:before{
+    content: "";
+    position: absolute;
+    width: 75%;
+    height: 2px;
+    bottom: 0;
+    border-bottom: 2px solid #FD8554;
+}
+
+.top_contact h2{
+    position: relative;
+    font-size: 28px;
+    font-weight: 500;
+    color: #585858;
+    text-align: left;
+    text-transform: uppercase;
+    padding: 30px 0;
+}
+
+.bottom_contact{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.cont_fields{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.bottom_contact .left{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: calc(50% - 15px);
+    margin-right: 30px;
+}
+
+.bottom_contact .right{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: calc(50% - 15px);
+}
+
+
+.bottom_contact .field{
+    min-height: 60px;
+    position: relative;
+    border: none;
+    outline: none;
+    background-color: rgba(255, 255, 255, 1);
+    padding: 0.5rem 1rem;
+    font-size: 20px;
+    margin-bottom: 24px;
+    transition: .3s;
+    border-radius: 10px;
+}
+
+#contactform .field::placeholder{
+    color: rgba(166, 166, 166, 1);
+}
+
+#contactform .field::-ms-input-placeholder{
+    color: rgba(166, 166, 166, 1)(166, 166, 166, 1);
+}
+
+#contactform .field::-webkit-input-placeholder{
+    color: rgba(166, 166, 166, 1);
+}
+
+#contactform .field::-moz-placeholder{
+    color: rgba(166, 166, 166, 1);
+}
+
+#contactform .field:hover{
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+#contactform textarea{
+  min-height: 144px;
+}
+
+#contactform .contactbtn{
+  width: 100%;
+  padding: 1rem 1rem;
+  background-color: #2D4450;
+  color: #fff;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: .3s;
+    font-weight: 600;
+    border-radius: 10px;
+}
+
+#contactform .contactbtn:hover{
+    background-color: rgba(45, 68, 80, 0.9);
+}
+
+#contactform .field:focus{
+    background-color: rgba(45, 68, 80, 0.9);
+}
