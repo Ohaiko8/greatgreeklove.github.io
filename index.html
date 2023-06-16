@@ -5,10 +5,10 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Great Greek Love</title>
-    <link href="../css/fonts.css" rel="stylesheet">
-	<link href="../css/main.css" rel="stylesheet">
-    <link href="../css/sidebar.css" type="text/css" rel="stylesheet">
-    <link href="../css/footer.css" type="text/css" rel="stylesheet">
+    <link href="css/fonts.css" rel="stylesheet">
+	<link href="css/main.css" rel="stylesheet">
+    <link href="css/sidebar.css" type="text/css" rel="stylesheet">
+    <link href="css/footer.css" type="text/css" rel="stylesheet">
     
 </head>
 <body>
@@ -18,25 +18,25 @@
             <ul>
             <li>
                 <a href="#home">
-                    <img src="../files/imgs/home.png" alt="">
+                    <img src="files/imgs/home.png" alt="">
                     <span>Home</span>
                 </a>
             </li>
             <li>
                 <a href="#about">
-                    <img src="../files/imgs/about.png" alt="">
+                    <img src="files/imgs/about.png" alt="">
                     <span>About Me</span>
                 </a>
             </li>
             <li>
                 <a href="gallery.html">
-                    <img src="../files/imgs/gallery.png" alt="">
+                    <img src="files/imgs/gallery.png" alt="">
                     <span>Gallery</span>
                 </a>
             </li>
             <li>
                 <a href="#contactform">
-                    <img src="../files/imgs/contact.png" alt="">
+                    <img src="files/imgs/contact.png" alt="">
                     <span>Mail</span>
                 </a>
             </li>
@@ -51,7 +51,7 @@
         <h2>My name is Fenia Chatzimichail and I am a graduate student of Athens School of Fine Arts. Currently, I am a postgraduate student i the interdisciplinary program of "Art and Public Sphere" at the Aristoteile University of Thessaloniki.</h2>
     </div>
     <div id="arrow">
-        <a href="#about"><img src="../files/imgs/down.png"></a>
+        <a href="#about"><img src="files/imgs/down.png"></a>
     </div>
     
     <div id="about">
@@ -98,7 +98,7 @@
                         </div>
                     </div>
                 </a>
-                <img src="../files/imgs/DSC_1213-product.jpg" alt="Toy 3">   
+                <img src="files/imgs/DSC_1213-product.jpg" alt="Toy 3">   
             </div>
             <div class=" toysimake_toy toysimake_3">
                 <a href="plaggona3.html">
@@ -109,7 +109,7 @@
                         </div>
                     </div>
                 </a>
-                <img src="../files/imgs/DSC_1219-product.jpg" alt="Toy 3">   
+                <img src="files/imgs/DSC_1219-product.jpg" alt="Toy 3">   
             </div>
             <div class=" toysimake_toy toysimake_3">
                 <a href="plaggona1.html">
@@ -120,7 +120,7 @@
                         </div>
                     </div>
                 </a>
-                <img src="../files/imgs/DSC_1240-social.jpg" alt="Toy 3">   
+                <img src="files/imgs/DSC_1240-social.jpg" alt="Toy 3">   
             </div>
             <div class=" toysimake_toy toysimake_3">
                 <a href="plaggona2.html">
@@ -131,7 +131,7 @@
                         </div>
                     </div>
                 </a>
-                <img src="../files/imgs/DSC_1244-product.jpg" alt="Toy 3">   
+                <img src="files/imgs/DSC_1244-product.jpg" alt="Toy 3">   
             </div>
             <div class=" toysimake_toy toysimake_3">
                 <a href="plaggona1.html">
@@ -142,7 +142,7 @@
                         </div>
                     </div>
                 </a>
-                <img src="../files/imgs/DSC_1223-product.jpg" alt="Toy 3">   
+                <img src="files/imgs/DSC_1223-product.jpg" alt="Toy 3">   
             </div>
             <div class=" toysimake_toy toysimake_3">
                 <a href="plaggona4.html">
@@ -153,7 +153,7 @@
                         </div>
                     </div>
                 </a>
-                <img src="../files/imgs/DSC_1237-product.jpg" alt="Toy 3">   
+                <img src="files/imgs/DSC_1237-product.jpg" alt="Toy 3">   
             </div>
         </div>
         <div class="showmorebtn">
@@ -211,18 +211,18 @@
                 <h4>SOCIAL MEDIA</h4>
                 <dd>
                     <a href="https://instagram.com/greatgreeklove/" target="_blank" rel="noopener noreferrer">
-                        <img src="../files/imgs/instagram.png" alt="" class="contact-logo">
+                        <img src="files/imgs/instagram.png" alt="" class="contact-logo">
                         <h1></h1>
                     </a>
                 </dd>
                 <dd>
                     <a href="#" target="_blank" rel="noopener noreferrer">
-                        <img src="../files/imgs/Facebook-logo.png">
+                        <img src="files/imgs/Facebook-logo.png">
                     </a>
                 </dd>
                 <dd>
                     <a href="#" target="_blank" rel="noopener noreferrer">
-                        <img src="../files/imgs/etsy.png">
+                        <img src="files/imgs/etsy.png">
                     </a>
                 </dd>
             </div>
@@ -253,8 +253,8 @@
         import { RectAreaLightHelper } from 'RectAreaLightHelper'
         import { RectAreaLightUniformsLib } from 'RectAreaLightUniformsLib';
 
-        let sceneSel = '../files/imgs/sky.jpg';
-        let finalToy = '../files/models/home.glb';
+        let sceneSel = 'files/imgs/sky.jpg';
+        let finalToy = 'files/models/home.glb';
 
         function init(sceneSel, finalToy) {
             let container = document.querySelector('.home');
@@ -409,7 +409,7 @@
             unselectScenes();
             scene1.classList.add("chosen");
 
-            sceneSel = '../files/scene1.jpg';
+            sceneSel = 'files/scene1.jpg';
             init(sceneSel, finalToy);
         })    
         
