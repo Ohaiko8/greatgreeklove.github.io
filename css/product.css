@@ -135,3 +135,29 @@ li img {
     cursor: pointer;
     scale:1.1;
 }
+
+.threedbutton{
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    background-color: #2D4450;
+    color: #fff;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: .3s;
+    font-weight: 600;
+    border-radius: 10px;
+}
+
+.threedbutton:hover{
+    background-color: rgba(45, 68, 80, 0.9);
+}
+
+.threedbutton:focus{
+    background-color: rgba(45, 68, 80, 0.9);
+}
+
+.story p{
+    margin-bottom: 40px;
+}
